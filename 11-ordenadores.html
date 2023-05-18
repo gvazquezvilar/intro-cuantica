@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang xml:lang>
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>11 Los ordenadores cu&#xE1;nticos | Introducci&#xF3;n a la comunicaci&#xF3;n y la computaci&#xF3;n cu&#xE1;ntica</title>
+  <meta name="description" content="&lt;p&gt;El objetivo de este curso es conocer el funcionamiento de los sistemas cu&#xE1;nticos de comunicaciones y computaci&#xF3;n. Partiendo de una base experimental, se presentar&#xE1; una generalizaci&#xF3;n de la teor&#xED;a de la probabilidad que permite modelar sistemas cu&#xE1;nticos, as&#xED; como sus (inesperadas) consecuencias. Esta nueva herramienta se aplicar&#xE1; a varios problemas de inter&#xE9;s, como la transmisi&#xF3;n de informaci&#xF3;n, el uso del entrelazamiento cu&#xE1;ntico en comunicaciones o la criptograf&#xED;a cu&#xE1;ntica. Tambi&#xE9;n se presentar&#xE1;n los principios de un ordenador cu&#xE1;ntico y su programaci&#xF3;n mediante el paralelismo cu&#xE1;ntico. Finalmente, se discutir&#xE1; el estado actual de las tecnolog&#xED;as cu&#xE1;nticas y sus perspectivas futuras.&lt;/p&gt;">
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7">
+
+  <meta property="og:title" content="11 Los ordenadores cu&#xE1;nticos | Introducci&#xF3;n a la comunicaci&#xF3;n y la computaci&#xF3;n cu&#xE1;ntica">
+  <meta property="og:type" content="book">
+  
+  <meta property="og:description" content="&lt;p&gt;El objetivo de este curso es conocer el funcionamiento de los sistemas cu&#xE1;nticos de comunicaciones y computaci&#xF3;n. Partiendo de una base experimental, se presentar&#xE1; una generalizaci&#xF3;n de la teor&#xED;a de la probabilidad que permite modelar sistemas cu&#xE1;nticos, as&#xED; como sus (inesperadas) consecuencias. Esta nueva herramienta se aplicar&#xE1; a varios problemas de inter&#xE9;s, como la transmisi&#xF3;n de informaci&#xF3;n, el uso del entrelazamiento cu&#xE1;ntico en comunicaciones o la criptograf&#xED;a cu&#xE1;ntica. Tambi&#xE9;n se presentar&#xE1;n los principios de un ordenador cu&#xE1;ntico y su programaci&#xF3;n mediante el paralelismo cu&#xE1;ntico. Finalmente, se discutir&#xE1; el estado actual de las tecnolog&#xED;as cu&#xE1;nticas y sus perspectivas futuras.&lt;/p&gt;">
+  
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="11 Los ordenadores cu&#xE1;nticos | Introducci&#xF3;n a la comunicaci&#xF3;n y la computaci&#xF3;n cu&#xE1;ntica">
+  
+  <meta name="twitter:description" content="&lt;p&gt;El objetivo de este curso es conocer el funcionamiento de los sistemas cu&#xE1;nticos de comunicaciones y computaci&#xF3;n. Partiendo de una base experimental, se presentar&#xE1; una generalizaci&#xF3;n de la teor&#xED;a de la probabilidad que permite modelar sistemas cu&#xE1;nticos, as&#xED; como sus (inesperadas) consecuencias. Esta nueva herramienta se aplicar&#xE1; a varios problemas de inter&#xE9;s, como la transmisi&#xF3;n de informaci&#xF3;n, el uso del entrelazamiento cu&#xE1;ntico en comunicaciones o la criptograf&#xED;a cu&#xE1;ntica. Tambi&#xE9;n se presentar&#xE1;n los principios de un ordenador cu&#xE1;ntico y su programaci&#xF3;n mediante el paralelismo cu&#xE1;ntico. Finalmente, se discutir&#xE1; el estado actual de las tecnolog&#xED;as cu&#xE1;nticas y sus perspectivas futuras.&lt;/p&gt;">
+  
+
+<meta name="author" content="Gonzalo V&#xE1;zquez Vilar (Universidad Carlos III de Madrid, gonzalo.vazquez@uc3m.es)">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="10-criptografia.html"/>
+<link rel="next" href="12-paralelismo.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet">
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet">
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet">
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet">
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet">
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet">
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet">
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet">
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet">
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css" data-external="1"></head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introducción a la comunicación y la computación cuántica</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentaci&#xF3;n</a></li>
+<li class="part"><span><b>I Introducci&#xF3;n</b></span></li>
+<li class="chapter" data-level="1" data-path="01-intro.html"><a href="01-intro.html"><i class="fa fa-check"></i><b>1</b> Origen de la mec&#xE1;nica cu&#xE1;ntica</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="01-intro.html"><a href="01-intro.html#radiaci&#xF3;n-de-un-cuerpo-negro"><i class="fa fa-check"></i><b>1.1</b> Radiaci&#xF3;n de un cuerpo negro</a></li>
+<li class="chapter" data-level="1.2" data-path="01-intro.html"><a href="01-intro.html#efecto-fotoel&#xE9;ctrico"><i class="fa fa-check"></i><b>1.2</b> Efecto fotoel&#xE9;ctrico</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="02-foton.html"><a href="02-foton.html"><i class="fa fa-check"></i><b>2</b> La polarizaci&#xF3;n de un fot&#xF3;n</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="02-foton.html"><a href="02-foton.html#jugando-con-la-polarizaci&#xF3;n"><i class="fa fa-check"></i><b>2.1</b> Jugando con la polarizaci&#xF3;n</a></li>
+<li class="chapter" data-level="2.2" data-path="02-foton.html"><a href="02-foton.html#midiendo-la-polarizaci&#xF3;n"><i class="fa fa-check"></i><b>2.2</b> Midiendo la polarizaci&#xF3;n</a></li>
+<li class="chapter" data-level="2.3" data-path="02-foton.html"><a href="02-foton.html#notaci&#xF3;n-bra-ket"><i class="fa fa-check"></i><b>2.3</b> Notaci&#xF3;n Bra-Ket</a></li>
+</ul></li>
+<li class="part"><span><b>II Principios de la mec&#xE1;nica cu&#xE1;ntica</b></span></li>
+<li class="chapter" data-level="3" data-path="03-estados.html"><a href="03-estados.html"><i class="fa fa-check"></i><b>3</b> Estados cu&#xE1;nticos binarios</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="03-estados.html"><a href="03-estados.html#estados-cu&#xE1;nticos-puros"><i class="fa fa-check"></i><b>3.1</b> Estados cu&#xE1;nticos puros</a></li>
+<li class="chapter" data-level="3.2" data-path="03-estados.html"><a href="03-estados.html#matriz-de-densidad-de-probabilidad"><i class="fa fa-check"></i><b>3.2</b> Matriz de densidad de probabilidad</a>
+<ul>
+<li class="chapter" data-level="" data-path="03-estados.html"><a href="03-estados.html#tipos-de-estados-cu&#xE1;nticos"><i class="fa fa-check"></i>Tipos de estados cu&#xE1;nticos</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="03-estados.html"><a href="03-estados.html#mdp-bit"><i class="fa fa-check"></i><b>3.3</b> Modelando un bit aleatorio</a>
+<ul>
+<li class="chapter" data-level="" data-path="03-estados.html"><a href="03-estados.html#bit-determinista"><i class="fa fa-check"></i>Bit determinista</a></li>
+<li class="chapter" data-level="" data-path="03-estados.html"><a href="03-estados.html#variable-aleatoria-binaria"><i class="fa fa-check"></i>Variable aleatoria binaria</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="03-estados.html"><a href="03-estados.html#mdp-foton"><i class="fa fa-check"></i><b>3.4</b> Modelando un fot&#xF3;n polarizado</a>
+<ul>
+<li class="chapter" data-level="" data-path="03-estados.html"><a href="03-estados.html#un-fot&#xF3;n-polarizado-linealmente"><i class="fa fa-check"></i>Un fot&#xF3;n polarizado linealmente</a></li>
+<li class="chapter" data-level="" data-path="03-estados.html"><a href="03-estados.html#un-fot&#xF3;n-con-incertidumbre"><i class="fa fa-check"></i>Un fot&#xF3;n con incertidumbre</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="04-medida.html"><a href="04-medida.html"><i class="fa fa-check"></i><b>4</b> Medida de un estado cu&#xE1;ntico</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="04-medida.html"><a href="04-medida.html#operador-de-medida-povm"><i class="fa fa-check"></i><b>4.1</b> Operador de medida POVM</a></li>
+<li class="chapter" data-level="4.2" data-path="04-medida.html"><a href="04-medida.html#realizaci&#xF3;n-de-un-bit-aleatorio"><i class="fa fa-check"></i><b>4.2</b> Realizaci&#xF3;n de un bit aleatorio</a></li>
+<li class="chapter" data-level="4.3" data-path="04-medida.html"><a href="04-medida.html#midiendo-la-polarizaci&#xF3;n-de-un-fot&#xF3;n"><i class="fa fa-check"></i><b>4.3</b> Midiendo la polarizaci&#xF3;n de un fot&#xF3;n</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="05-compuestos.html"><a href="05-compuestos.html"><i class="fa fa-check"></i><b>5</b> Sistemas cu&#xE1;nticos compuestos</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="05-compuestos.html"><a href="05-compuestos.html#producto-de-kr&#xF6;necker"><i class="fa fa-check"></i><b>5.1</b> Producto de Kr&#xF6;necker</a>
+<ul>
+<li class="chapter" data-level="" data-path="05-compuestos.html"><a href="05-compuestos.html#propiedades"><i class="fa fa-check"></i>Propiedades</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="05-compuestos.html"><a href="05-compuestos.html#matriz-de-densidad-de-probabilidad-compuesta"><i class="fa fa-check"></i><b>5.2</b> Matriz de densidad de probabilidad compuesta</a>
+<ul>
+<li class="chapter" data-level="" data-path="05-compuestos.html"><a href="05-compuestos.html#tipos-de-estados-cu&#xE1;nticos-compuestos"><i class="fa fa-check"></i>Tipos de estados cu&#xE1;nticos compuestos</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="05-compuestos.html"><a href="05-compuestos.html#medida-de-un-sistema-cu&#xE1;ntico-compuesto"><i class="fa fa-check"></i><b>5.3</b> Medida de un sistema cu&#xE1;ntico compuesto</a>
+<ul>
+<li class="chapter" data-level="" data-path="05-compuestos.html"><a href="05-compuestos.html#medida-bipartida"><i class="fa fa-check"></i>Medida bipartida</a></li>
+<li class="chapter" data-level="" data-path="05-compuestos.html"><a href="05-compuestos.html#medida-parcial-de-un-sistema"><i class="fa fa-check"></i>Medida parcial de un sistema</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="05-compuestos.html"><a href="05-compuestos.html#marginalizaci&#xF3;n-la-traza-parcial"><i class="fa fa-check"></i><b>5.4</b> Marginalizaci&#xF3;n: La traza parcial</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="06-evolucion.html"><a href="06-evolucion.html"><i class="fa fa-check"></i><b>6</b> Evoluci&#xF3;n de un sistema cu&#xE1;ntico</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="06-evolucion.html"><a href="06-evolucion.html#transformaci&#xF3;n-unitaria"><i class="fa fa-check"></i><b>6.1</b> Transformaci&#xF3;n unitaria</a></li>
+<li class="chapter" data-level="6.2" data-path="06-evolucion.html"><a href="06-evolucion.html#reversibilidad"><i class="fa fa-check"></i><b>6.2</b> Reversibilidad</a></li>
+<li class="chapter" data-level="6.3" data-path="06-evolucion.html"><a href="06-evolucion.html#puertas-cu&#xE1;nticas"><i class="fa fa-check"></i><b>6.3</b> Puertas cu&#xE1;nticas</a>
+<ul>
+<li class="chapter" data-level="" data-path="06-evolucion.html"><a href="06-evolucion.html#puertas-de-pauli"><i class="fa fa-check"></i>Puertas de Pauli</a></li>
+<li class="chapter" data-level="" data-path="06-evolucion.html"><a href="06-evolucion.html#puerta-de-hadamard"><i class="fa fa-check"></i>Puerta de Hadamard</a></li>
+<li class="chapter" data-level="" data-path="06-evolucion.html"><a href="06-evolucion.html#puerta-cnot"><i class="fa fa-check"></i>Puerta CNOT</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="07-teorema-Bell.html"><a href="07-teorema-Bell.html"><i class="fa fa-check"></i><b>7</b> El Teorema de Bell</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="07-teorema-Bell.html"><a href="07-teorema-Bell.html#teor&#xED;a-de-la-probabilidad"><i class="fa fa-check"></i><b>7.1</b> Teor&#xED;a de la probabilidad</a>
+<ul>
+<li class="chapter" data-level="" data-path="07-teorema-Bell.html"><a href="07-teorema-Bell.html#variables-aleatorias"><i class="fa fa-check"></i>Variables aleatorias</a></li>
+<li class="chapter" data-level="" data-path="07-teorema-Bell.html"><a href="07-teorema-Bell.html#funci&#xF3;n-de-probabilidad"><i class="fa fa-check"></i>Funci&#xF3;n de probabilidad</a></li>
+<li class="chapter" data-level="" data-path="07-teorema-Bell.html"><a href="07-teorema-Bell.html#operador-promedio"><i class="fa fa-check"></i>Operador promedio</a></li>
+<li class="chapter" data-level="" data-path="07-teorema-Bell.html"><a href="07-teorema-Bell.html#limitaciones"><i class="fa fa-check"></i>Limitaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="07-teorema-Bell.html"><a href="07-teorema-Bell.html#el-teorema-de-bell-1"><i class="fa fa-check"></i><b>7.2</b> El Teorema de Bell</a></li>
+<li class="chapter" data-level="7.3" data-path="07-teorema-Bell.html"><a href="07-teorema-Bell.html#desigualdad-chsh"><i class="fa fa-check"></i><b>7.3</b> Desigualdad CHSH</a></li>
+<li class="chapter" data-level="7.4" data-path="07-teorema-Bell.html"><a href="07-teorema-Bell.html#verificaci&#xF3;n-experimental"><i class="fa fa-check"></i><b>7.4</b> Verificaci&#xF3;n experimental</a></li>
+</ul></li>
+<li class="part"><span><b>III Comunicaciones cu&#xE1;nticas</b></span></li>
+<li class="chapter" data-level="8" data-path="08-informacion.html"><a href="08-informacion.html"><i class="fa fa-check"></i><b>8</b> Transmisi&#xF3;n de informaci&#xF3;n</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="08-informacion.html"><a href="08-informacion.html#tx-cuantica"><i class="fa fa-check"></i><b>8.1</b> Informaci&#xF3;n cu&#xE1;ntica</a></li>
+<li class="chapter" data-level="8.2" data-path="08-informacion.html"><a href="08-informacion.html#tx-clasica"><i class="fa fa-check"></i><b>8.2</b> Informaci&#xF3;n cl&#xE1;sica</a>
+<ul>
+<li class="chapter" data-level="" data-path="08-informacion.html"><a href="08-informacion.html#probabilidad-de-error"><i class="fa fa-check"></i>Probabilidad de error</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="08-informacion.html"><a href="08-informacion.html#tx-entrelazamiento"><i class="fa fa-check"></i><b>8.3</b> Transmisi&#xF3;n por entrelazamiento</a></li>
+<li class="chapter" data-level="8.4" data-path="08-informacion.html"><a href="08-informacion.html#sistemas-ruidosos"><i class="fa fa-check"></i><b>8.4</b> Sistemas ruidosos</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="09-teletransporte.html"><a href="09-teletransporte.html"><i class="fa fa-check"></i><b>9</b> Protocolos de comunicaciones</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="09-teletransporte.html"><a href="09-teletransporte.html#recursos-unitarios-no-locales"><i class="fa fa-check"></i><b>9.1</b> Recursos unitarios no locales</a></li>
+<li class="chapter" data-level="9.2" data-path="09-teletransporte.html"><a href="09-teletransporte.html#distribuci&#xF3;n-de-entrelazamiento"><i class="fa fa-check"></i><b>9.2</b> Distribuci&#xF3;n de entrelazamiento</a></li>
+<li class="chapter" data-level="9.3" data-path="09-teletransporte.html"><a href="09-teletransporte.html#codificaci&#xF3;n-superdensa"><i class="fa fa-check"></i><b>9.3</b> Codificaci&#xF3;n superdensa</a></li>
+<li class="chapter" data-level="9.4" data-path="09-teletransporte.html"><a href="09-teletransporte.html#teletransporte-cu&#xE1;ntico"><i class="fa fa-check"></i><b>9.4</b> Teletransporte cu&#xE1;ntico</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="10-criptografia.html"><a href="10-criptografia.html"><i class="fa fa-check"></i><b>10</b> Criptograf&#xED;a cu&#xE1;ntica</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="10-criptografia.html"><a href="10-criptografia.html#sistemas-cl&#xE1;sicos-de-criptograf&#xED;a"><i class="fa fa-check"></i><b>10.1</b> Sistemas cl&#xE1;sicos de criptograf&#xED;a</a></li>
+<li class="chapter" data-level="10.2" data-path="10-criptografia.html"><a href="10-criptografia.html#principio-de-funcionamiento"><i class="fa fa-check"></i><b>10.2</b> Principio de funcionamiento</a></li>
+<li class="chapter" data-level="10.3" data-path="10-criptografia.html"><a href="10-criptografia.html#distribuci&#xF3;n-cu&#xE1;ntica-de-clave"><i class="fa fa-check"></i><b>10.3</b> Distribuci&#xF3;n cu&#xE1;ntica de clave</a>
+<ul>
+<li class="chapter" data-level="" data-path="10-criptografia.html"><a href="10-criptografia.html#seguridad-del-protocolo-bb84"><i class="fa fa-check"></i>Seguridad del protocolo BB84</a></li>
+<li class="chapter" data-level="" data-path="10-criptografia.html"><a href="10-criptografia.html#debilidades-del-protocolo-bb84"><i class="fa fa-check"></i>Debilidades del protocolo BB84</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="10-criptografia.html"><a href="10-criptografia.html#protocolos-de-doble-llave"><i class="fa fa-check"></i><b>10.4</b> Protocolos de doble llave</a></li>
+</ul></li>
+<li class="part"><span><b>IV Computaci&#xF3;n cu&#xE1;ntica</b></span></li>
+<li class="chapter" data-level="11" data-path="11-ordenadores.html"><a href="11-ordenadores.html"><i class="fa fa-check"></i><b>11</b> Los ordenadores cu&#xE1;nticos</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="11-ordenadores.html"><a href="11-ordenadores.html#superposici&#xF3;n-y-paralelismo"><i class="fa fa-check"></i><b>11.1</b> Superposici&#xF3;n y paralelismo</a></li>
+<li class="chapter" data-level="11.2" data-path="11-ordenadores.html"><a href="11-ordenadores.html#los-circuitos-cu&#xE1;nticos-y-su-tecnolog&#xED;a"><i class="fa fa-check"></i><b>11.2</b> Los circuitos cu&#xE1;nticos y su tecnolog&#xED;a</a></li>
+<li class="chapter" data-level="11.3" data-path="11-ordenadores.html"><a href="11-ordenadores.html#decoherencia-y-m&#xE9;tricas-de-prestaciones"><i class="fa fa-check"></i><b>11.3</b> Decoherencia y m&#xE9;tricas de prestaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="12-paralelismo.html"><a href="12-paralelismo.html"><i class="fa fa-check"></i><b>12</b> Paralelismo cu&#xE1;ntico</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="12-paralelismo.html"><a href="12-paralelismo.html#modelo-de-un-ordenador-cu&#xE1;ntico"><i class="fa fa-check"></i><b>12.1</b> Modelo de un ordenador cu&#xE1;ntico</a>
+<ul>
+<li class="chapter" data-level="" data-path="12-paralelismo.html"><a href="12-paralelismo.html#bit-cu&#xE1;ntico-o-c&#xFA;bit"><i class="fa fa-check"></i>Bit cu&#xE1;ntico o c&#xFA;bit</a></li>
+<li class="chapter" data-level="" data-path="12-paralelismo.html"><a href="12-paralelismo.html#estado-conjunto"><i class="fa fa-check"></i>Estado conjunto</a></li>
+<li class="chapter" data-level="" data-path="12-paralelismo.html"><a href="12-paralelismo.html#medida-del-estado-base-computacional"><i class="fa fa-check"></i>Medida del estado: base computacional</a></li>
+<li class="chapter" data-level="" data-path="12-paralelismo.html"><a href="12-paralelismo.html#operaciones-y-puertas-cu&#xE1;nticas"><i class="fa fa-check"></i>Operaciones y puertas cu&#xE1;nticas</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="12-paralelismo.html"><a href="12-paralelismo.html#funciones-booleanas"><i class="fa fa-check"></i><b>12.2</b> Funciones booleanas</a>
+<ul>
+<li class="chapter" data-level="" data-path="12-paralelismo.html"><a href="12-paralelismo.html#implementaci&#xF3;n-cu&#xE1;ntica-de-funciones-booleanas"><i class="fa fa-check"></i>Implementaci&#xF3;n cu&#xE1;ntica de funciones booleanas</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="12-paralelismo.html"><a href="12-paralelismo.html#paralelismo-cu&#xE1;ntico-1"><i class="fa fa-check"></i><b>12.3</b> Paralelismo cu&#xE1;ntico</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="13-algoritmos.html"><a href="13-algoritmos.html"><i class="fa fa-check"></i><b>13</b> Algoritmos cu&#xE1;nticos</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="13-algoritmos.html"><a href="13-algoritmos.html#algoritmo-de-deutsch-jotzsa"><i class="fa fa-check"></i><b>13.1</b> Algoritmo de Deutsch-Jotzsa</a>
+<ul>
+<li class="chapter" data-level="" data-path="13-algoritmos.html"><a href="13-algoritmos.html#planteamiento-del-problema"><i class="fa fa-check"></i>Planteamiento del problema</a></li>
+<li class="chapter" data-level="" data-path="13-algoritmos.html"><a href="13-algoritmos.html#funciones-de-entrada-binaria"><i class="fa fa-check"></i>Funciones de entrada binaria</a></li>
+<li class="chapter" data-level="" data-path="13-algoritmos.html"><a href="13-algoritmos.html#algoritmo-de-deutsch-jotzsa-1"><i class="fa fa-check"></i>Algoritmo de Deutsch-Jotzsa</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="13-algoritmos.html"><a href="13-algoritmos.html#algoritmo-de-b&#xFA;squeda-de-grover"><i class="fa fa-check"></i><b>13.2</b> Algoritmo de b&#xFA;squeda de Grover</a>
+<ul>
+<li class="chapter" data-level="" data-path="13-algoritmos.html"><a href="13-algoritmos.html#planteamiento-del-problema-1"><i class="fa fa-check"></i>Planteamiento del problema</a></li>
+<li class="chapter" data-level="" data-path="13-algoritmos.html"><a href="13-algoritmos.html#or&#xE1;culo-e-inicializaci&#xF3;n"><i class="fa fa-check"></i>Or&#xE1;culo e inicializaci&#xF3;n</a></li>
+<li class="chapter" data-level="" data-path="13-algoritmos.html"><a href="13-algoritmos.html#paralelismo-cu&#xE1;ntico-3"><i class="fa fa-check"></i>Paralelismo cu&#xE1;ntico</a></li>
+<li class="chapter" data-level="" data-path="13-algoritmos.html"><a href="13-algoritmos.html#operador-de-difusi&#xF3;n-de-grover"><i class="fa fa-check"></i>Operador de difusi&#xF3;n de Grover</a></li>
+<li class="chapter" data-level="" data-path="13-algoritmos.html"><a href="13-algoritmos.html#medida-y-resultado-1"><i class="fa fa-check"></i>Medida y resultado</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="13-algoritmos.html"><a href="13-algoritmos.html#algoritmo-de-factorizaci&#xF3;n-de-shor"><i class="fa fa-check"></i><b>13.3</b> Algoritmo de factorizaci&#xF3;n de Shor</a>
+<ul>
+<li class="chapter" data-level="" data-path="13-algoritmos.html"><a href="13-algoritmos.html#transformada-cu&#xE1;ntica-de-fourier"><i class="fa fa-check"></i>Transformada cu&#xE1;ntica de Fourier</a></li>
+<li class="chapter" data-level="" data-path="13-algoritmos.html"><a href="13-algoritmos.html#c&#xE1;lculo-del-periodo-de-una-funci&#xF3;n"><i class="fa fa-check"></i>C&#xE1;lculo del periodo de una funci&#xF3;n</a></li>
+<li class="chapter" data-level="" data-path="13-algoritmos.html"><a href="13-algoritmos.html#algoritmo-de-factorizaci&#xF3;n"><i class="fa fa-check"></i>Algoritmo de factorizaci&#xF3;n</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="14-conclusiones.html"><a href="14-conclusiones.html"><i class="fa fa-check"></i><b>14</b> Perspectivas futuras</a></li>
+<li class="divider"></li>
+<li><a href="https://www.tsc.uc3m.es/~gvazquez/" target="blank">&copy; <script>document.write(new Date().getFullYear());</script> Gonzalo Vázquez Vilar</a></li>
+<li><a href="https://bookdown.org/" target="blank">&nbsp;&nbsp;&nbsp;&nbsp;Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introducci&#xF3;n a la comunicaci&#xF3;n y la computaci&#xF3;n cu&#xE1;ntica</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="los-ordenadores-cu&#xE1;nticos" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">11</span> Los ordenadores cu&#xE1;nticos<a href="11-ordenadores.html#los-ordenadores-cu&#xE1;nticos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Ciertas propiedades de la mec&#xE1;nica cu&#xE1;ntica, tales como el colapso de la funci&#xF3;n de onda o el entrelazamiento, permiten el desarrollo de nuevos sistemas de comunicaciones sin un an&#xE1;logo cl&#xE1;sico. Del mismo modo, uno se puede plantear si es posible aprovechar las propiedades de la mec&#xE1;nica cu&#xE1;ntica para crear un nuevo tipo de ordenadores con capacidades muy diferentes a los sistemas de computaci&#xF3;n existentes.</p>
+<p>En 1981, Paul Benioff teoriz&#xF3; sobre una m&#xE1;quina de Turing que utilizaba las leyes de la mec&#xE1;nica cu&#xE1;ntica en algunos puntos de la ejecuci&#xF3;n del programa. Sin embargo, su propuesta implicaba realizar una medida del estado cu&#xE1;ntico interno tras la ejecuci&#xF3;n de cada instrucci&#xF3;n, por lo que se perd&#xED;an muchas de las propiedades cu&#xE1;nticas del sistema y no ofrec&#xED;a una gran ventaja sobre los sistemas anteriores.
+En 1982 Richard Feynman plante&#xF3; que una computadora cu&#xE1;ntica &#x2013;que se basara exclusivamente en reglas cu&#xE1;nticas&#x2013; podr&#xED;a hacer ciertos c&#xE1;lculos imposibles para un ordenador cl&#xE1;sico.<a href="14-conclusiones.html#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
+Este novedoso concepto de ordenador abri&#xF3; la puerta al desarrollo de nuevos algoritmos que utilizaban en los a&#xF1;os siguientes.
+Entre los avances en esta direcci&#xF3;n cabe resaltar el algoritmo de Deutsch-Jozsa publicado en 1992, primer ejemplo que mostraba la ventaja de la computaci&#xF3;n cu&#xE1;ntica sobre la cl&#xE1;sica; el algoritmo de Shor en 1994, que permite factorizar n&#xFA;meros grandes en tiempo polin&#xF3;mico, y el algoritmo de b&#xFA;squeda de Grover en 1996, que permite encontrar una aguja en un pajar (sin rebuscar demasiado).</p>
+<p>Todos estos avances fueron en gran medida de car&#xE1;cter te&#xF3;rico, abstray&#xE9;ndose de la tecnolog&#xED;a que permitir&#xED;a la construcci&#xF3;n de estos ordenadores o c&#xF3;mo se ejecutar&#xED;an los algoritmos cu&#xE1;nticos en la pr&#xE1;ctica.
+Sin embargo, al mismo tiempo que se produc&#xED;an estos avances te&#xF3;ricos, muchas compa&#xF1;&#xED;as y centros de investigaci&#xF3;n desarrollaban la tecnolog&#xED;a necesaria para la creaci&#xF3;n de un ordenador cu&#xE1;nticos funcional.
+Hoy en d&#xED;a, ya existen estos ordenadores y es un &#xE1;rea con una r&#xE1;pida evoluci&#xF3;n. A pesar de que los ordenadores cu&#xE1;nticos todav&#xED;a operan sobre un peque&#xF1;o n&#xFA;mero de c&#xFA;bits y no permiten realizar operaciones complejas de forma fiable, para ciertas tareas espec&#xED;ficas ya consiguen superar a los sistemas de computaci&#xF3;n cl&#xE1;sica m&#xE1;s potentes. Este hito, denominado <em>supremac&#xED;a cu&#xE1;ntica</em>, se alcanz&#xF3; en 2019 con un ordenador cu&#xE1;ntico de tan solo 53 c&#xFA;bits fabricado por Google.<a href="14-conclusiones.html#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<p>Uno de los principios que utilizan los ordenadores cu&#xE1;nticos es el concepto de superposici&#xF3;n.</p>
+<div id="superposici&#xF3;n-y-paralelismo" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> Superposici&#xF3;n y paralelismo<a href="11-ordenadores.html#superposici&#xF3;n-y-paralelismo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A lo largo del curso hemos visto como un estado cu&#xE1;ntico no est&#xE1; definido antes del proceso de medida, momento en el cual se resuelve esa aleatoriedad y pasa a mostrar un resultado determinado. Al estado previo a este proceso de medida lo denominaremos <em>superposici&#xF3;n cu&#xE1;ntica</em>, ya que se puede interpretar como una mezcla o <em>superposici&#xF3;n</em> de los posibles resultados del proceso de medida.</p>
+<p>Por ejemplo, consideremos un estado puro <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>&#x3C1;</mi><mo>=</mo><mpadded><mi mathvariant="normal">&#x2223;</mi><mi>&#x3C8;</mi><mo stretchy="false">&#x27E9;</mo></mpadded><mpadded><mo stretchy="false">&#x27E8;</mo><mi>&#x3C8;</mi><mi mathvariant="normal">&#x2223;</mi></mpadded></mrow><annotation encoding="application/x-tex">\rho=\ket{\psi}\bra{\psi}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">&#x3C1;</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="minner"><span class="mord">&#x2223;</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">&#x3C8;</span></span><span class="mclose">&#x27E9;</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner"><span class="mopen">&#x27E8;</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">&#x3C8;</span></span><span class="mord">&#x2223;</span></span></span></span></span> con
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right" columnspacing><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mpadded><mi mathvariant="normal">&#x2223;</mi><mi>&#x3C8;</mi><mo stretchy="false">&#x27E9;</mo></mpadded><mo>=</mo><mi>&#x3B1;</mi><mpadded><mi mathvariant="normal">&#x2223;</mi><mn>0</mn><mo stretchy="false">&#x27E9;</mo></mpadded><mo>+</mo><mi>&#x3B2;</mi><mpadded><mi mathvariant="normal">&#x2223;</mi><mn>1</mn><mo stretchy="false">&#x27E9;</mo></mpadded></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align*}
+       \ket{\psi} = \alpha \ket{0} + \beta \ket{1}
+\end{align*}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.5em;vertical-align:-0.5em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1em;"><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="minner"><span class="mord">&#x2223;</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">&#x3C8;</span></span><span class="mclose">&#x27E9;</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">&#x3B1;</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner"><span class="mord">&#x2223;</span><span class="mord"><span class="mord">0</span></span><span class="mclose">&#x27E9;</span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.05278em;">&#x3B2;</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner"><span class="mord">&#x2223;</span><span class="mord"><span class="mord">1</span></span><span class="mclose">&#x27E9;</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.5em;"><span></span></span></span></span></span></span></span></span></span></span></span>
+donde <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>&#x3B1;</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">&#x3B1;</span></span></span></span> y <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>&#x3B2;</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05278em;">&#x3B2;</span></span></span></span> son n&#xFA;meros complejos tales que <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">&#x2223;</mi><mi>&#x3B1;</mi><msup><mi mathvariant="normal">&#x2223;</mi><mn>2</mn></msup><mo>+</mo><mi mathvariant="normal">&#x2223;</mi><mi>&#x3B2;</mi><msup><mi mathvariant="normal">&#x2223;</mi><mn>2</mn></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|\alpha|^2+|\beta|^2=1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord">&#x2223;</span><span class="mord mathnormal" style="margin-right:0.0037em;">&#x3B1;</span><span class="mord"><span class="mord">&#x2223;</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord">&#x2223;</span><span class="mord mathnormal" style="margin-right:0.05278em;">&#x3B2;</span><span class="mord"><span class="mord">&#x2223;</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>.
+Si tomamos este estado y aplicamos una medida con respecto al POVM <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo fence="true" stretchy="true" minsize="1.2em" maxsize="1.2em">{</mo><mtext>&#x2009;</mtext><msub><mi mathvariant="normal">&#x3A0;</mi><mn>0</mn></msub><mo>=</mo><mpadded><mi mathvariant="normal">&#x2223;</mi><mn>0</mn><mo stretchy="false">&#x27E9;</mo></mpadded><mpadded><mo stretchy="false">&#x27E8;</mo><mn>0</mn><mi mathvariant="normal">&#x2223;</mi></mpadded><mo separator="true">,</mo><mtext>&#x2005;&#x200A;</mtext><msub><mi mathvariant="normal">&#x3A0;</mi><mn>1</mn></msub><mo>=</mo><mpadded><mi mathvariant="normal">&#x2223;</mi><mn>1</mn><mo stretchy="false">&#x27E9;</mo></mpadded><mpadded><mo stretchy="false">&#x27E8;</mo><mn>1</mn><mi mathvariant="normal">&#x2223;</mi></mpadded><mtext>&#x2009;</mtext><mo fence="true" stretchy="true" minsize="1.2em" maxsize="1.2em">}</mo></mrow><annotation encoding="application/x-tex">\bigl\{\,\Pi_0=\ket{0} \bra{0},\; \Pi_1=\ket{1} \bra{1}\,\bigr\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2em;vertical-align:-0.35em;"></span><span class="mopen"><span class="delimsizing size1">{</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord">&#x3A0;</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="minner"><span class="mord">&#x2223;</span><span class="mord"><span class="mord">0</span></span><span class="mclose">&#x27E9;</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner"><span class="mopen">&#x27E8;</span><span class="mord"><span class="mord">0</span></span><span class="mord">&#x2223;</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord">&#x3A0;</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.2em;vertical-align:-0.35em;"></span><span class="minner"><span class="mord">&#x2223;</span><span class="mord"><span class="mord">1</span></span><span class="mclose">&#x27E9;</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner"><span class="mopen">&#x27E8;</span><span class="mord"><span class="mord">1</span></span><span class="mord">&#x2223;</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mclose"><span class="delimsizing size1">}</span></span></span></span></span>, obtendremos el resultado &#x2018;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>&#x2019; con probabilidad
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right" columnspacing><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mtext>Tr</mtext><mo fence="true" stretchy="true" minsize="1.2em" maxsize="1.2em">[</mo><mi>&#x3C1;</mi><msub><mi mathvariant="normal">&#x3A0;</mi><mn>0</mn></msub><mo fence="true" stretchy="true" minsize="1.2em" maxsize="1.2em">]</mo><mo>=</mo><mtext>Tr</mtext><mo fence="true" stretchy="true" minsize="1.2em" maxsize="1.2em">[</mo><mpadded><mi mathvariant="normal">&#x2223;</mi><mi>&#x3C8;</mi><mo stretchy="false">&#x27E9;</mo></mpadded><mpadded><mo stretchy="false">&#x27E8;</mo><mi>&#x3C8;</mi><mi mathvariant="normal">&#x2223;</mi></mpadded><mpadded><mi mathvariant="normal">&#x2223;</mi><mn>0</mn><mo stretchy="false">&#x27E9;</mo></mpadded><mpadded><mo stretchy="false">&#x27E8;</mo><mn>0</mn><mi mathvariant="normal">&#x2223;</mi></mpadded><mo fence="true" stretchy="true" minsize="1.2em" maxsize="1.2em">]</mo><mo>=</mo><mi mathvariant="normal">&#x2223;</mi><mi>&#x3B1;</mi><msup><mi mathvariant="normal">&#x2223;</mi><mn>2</mn></msup></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align*}
+      \text{Tr}\bigl[\rho \Pi_0\bigr] =
+        \text{Tr}\bigl[\ket{\psi} \bra{\psi} \ket{0} \bra{0}\bigr] = |\alpha|^2
+\end{align*}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.5241em;vertical-align:-0.5121em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0121em;"><span style="top:-3.1479em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord">Tr</span></span><span class="mopen"><span class="delimsizing size1">[</span></span><span class="mord mathnormal">&#x3C1;</span><span class="mord"><span class="mord">&#x3A0;</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing size1">]</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord text"><span class="mord">Tr</span></span><span class="mopen"><span class="delimsizing size1">[</span></span><span class="minner"><span class="mord">&#x2223;</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">&#x3C8;</span></span><span class="mclose">&#x27E9;</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner"><span class="mopen">&#x27E8;</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">&#x3C8;</span></span><span class="mord">&#x2223;</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner"><span class="mord">&#x2223;</span><span class="mord"><span class="mord">0</span></span><span class="mclose">&#x27E9;</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner"><span class="mopen">&#x27E8;</span><span class="mord"><span class="mord">0</span></span><span class="mord">&#x2223;</span></span><span class="mclose"><span class="delimsizing size1">]</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">&#x2223;</span><span class="mord mathnormal" style="margin-right:0.0037em;">&#x3B1;</span><span class="mord"><span class="mord">&#x2223;</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.5121em;"><span></span></span></span></span></span></span></span></span></span></span></span>
+y el resultado &#x2018;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>&#x2019; con probabilidad <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Tr</mtext><mo fence="true" stretchy="true" minsize="1.2em" maxsize="1.2em">[</mo><mi>&#x3C1;</mi><msub><mi mathvariant="normal">&#x3A0;</mi><mn>1</mn></msub><mo fence="true" stretchy="true" minsize="1.2em" maxsize="1.2em">]</mo><mo>=</mo><mi mathvariant="normal">&#x2223;</mi><mi>&#x3B2;</mi><msup><mi mathvariant="normal">&#x2223;</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\text{Tr}\bigl[\rho \Pi_1\bigr] = |\beta|^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2em;vertical-align:-0.35em;"></span><span class="mord text"><span class="mord">Tr</span></span><span class="mopen"><span class="delimsizing size1">[</span></span><span class="mord mathnormal">&#x3C1;</span><span class="mord"><span class="mord">&#x3A0;</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing size1">]</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord">&#x2223;</span><span class="mord mathnormal" style="margin-right:0.05278em;">&#x3B2;</span><span class="mord"><span class="mord">&#x2223;</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>.
+Sin embargo, antes de realizar esta medida, el estado <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>&#x3C1;</mi></mrow><annotation encoding="application/x-tex">\rho</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">&#x3C1;</span></span></span></span> no se encuentra en
+ninguno de esos dos valores &#x2018;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>&#x2019; o &#x2018;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>&#x2019;, sino que se corresponde a una superposici&#xF3;n de ambos.</p>
+<p>La idea clave detr&#xE1;s de la computaci&#xF3;n cu&#xE1;ntica es aplicar una serie de operaciones y algoritmos, no a un estado definido, sino a una superposici&#xF3;n de estados. De esta forma un ordenador cu&#xE1;ntico no procesa las entradas de un forma secuencial, sino que tiene la capacidad de procesarlas en forma de superposici&#xF3;n.
+Por tanto, intuitivamente, una de las ventajas de un procesador cu&#xE1;ntico es la posibilidad de procesar varias entradas al mismo tiempo:</p>
+<p><img src="figs/quantum-computing-superposition.svg" alt="Paralelismo cu&#xE1;ntico como superposici&#xF3;n de salidas para una superposici&#xF3;n de entradas." width="65%" style="display: block; margin: auto;"></p>
+<p>El potencial de esta idea es evidente si, por ejemplo, pensamos en calcular las salidas de una funci&#xF3;n booleana para todas sus posibles entradas de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> bits. Un ordenador cl&#xE1;sico necesitar&#xED;a evaluar la funci&#xF3;n <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">2^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6644em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span> veces (una para cada posible entrada), mientras un ordenador cu&#xE1;ntico podr&#xED;a procesar la superposici&#xF3;n de las <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">2^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6644em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span> posibles entradas en una &#xFA;nica llamada a la funci&#xF3;n.
+Aunque la idea es relativamente sencilla, veremos que conseguir algoritmos &#xFA;tiles con esta t&#xE9;cnica es muy complicado y, hoy en d&#xED;a, todav&#xED;a no existen muchas aplicaciones de esta tecnolog&#xED;a.</p>
+</div>
+<div id="los-circuitos-cu&#xE1;nticos-y-su-tecnolog&#xED;a" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> Los circuitos cu&#xE1;nticos y su tecnolog&#xED;a<a href="11-ordenadores.html#los-circuitos-cu&#xE1;nticos-y-su-tecnolog&#xED;a" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Del mismo modo que existen muchos sistemas f&#xED;sicos con propiedades cu&#xE1;nticas, existen m&#xFA;ltiples tecnolog&#xED;as que coducen al dise&#xF1;o de un ordenador cu&#xE1;ntico de prop&#xF3;sito general.
+Quiz&#xE1;s las tecnolog&#xED;as m&#xE1;s prometedoras hoy en d&#xED;a son las basadas en osciladores superconductores, en la que se basan por ejemplo los ordenadores cu&#xE1;nticos de IBM o Google, y la basada en iones atrapados, empleada en los ordenadores de Honeywell o IonQ. A&#xFA;n as&#xED;, hay otras tecnolog&#xED;as en desarrollo como son procesadores cu&#xE1;nticos fot&#xF3;nicos, o las basadas en aniones abelianos.
+En cuaquier caso, en esta asignatura nos abstraeremos de la implementaci&#xF3;n particular del ordenador cu&#xE1;ntico y nos centraremos en sus capacidades desde un punto de vista te&#xF3;rico.</p>
+<p>Para entender el funcionamiento y capacidades de estos ordenadores es necesario definir algunos conceptos:</p>
+<ul>
+<li><em>L&#xED;nea de c&#xFA;bits:</em> Se corresponde con el estado cu&#xE1;ntico interno del procesador. %En funci&#xF3;n de la potencia del ordenador cu&#xE1;ntico, hoy en d&#xED;a, las dimensiones que pueden manejar van desde unos pocos c&#xFA;bits hasta unas pocas decenas de c&#xFA;bits.</li>
+<li><em>Puerta cu&#xE1;ntica:</em> Son las operaciones que se aplican a las l&#xED;neas de c&#xFA;bits y que se corresponden a una transformaci&#xF3;n unitaria. Las puertas cu&#xE1;nticas pueden ser de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span> o incluso de m&#xE1;s c&#xFA;bits.</li>
+<li><em>Bloque de medida:</em> Aplica una operaci&#xF3;n de medida a un c&#xFA;bit determinado, transladando el resultado a una l&#xED;nea cl&#xE1;sica, que s&#xF3;lo puede tomar los valores &#x2018;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>&#x2019; y &#x2018;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>&#x2019;. %En los ordenares cu&#xE1;nticos esta medida se realiza con respecto al POVM <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">{</mo><msub><mi mathvariant="normal">&#x3A0;</mi><mn>0</mn></msub><mo separator="true">,</mo><msub><mi mathvariant="normal">&#x3A0;</mi><mn>1</mn></msub><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">\{\Pi_0, \Pi_1\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord"><span class="mord">&#x3A0;</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord">&#x3A0;</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">}</span></span></span></span>.</li>
+<li><em>Circuito cu&#xE1;ntico:</em> Es una combinaci&#xF3;n de puertas cu&#xE1;nticas y operaciones de medida aplicadas sobre las l&#xED;neas de c&#xFA;bits.</li>
+</ul>
+<p>A menudo representaremos los circuitos cu&#xE1;nticos como un diagrama de bloques que incluye las l&#xED;neas cu&#xE1;nticas de c&#xFA;bits, las diversas puertas cu&#xE1;nticas que componen en circuito, los bloques de medida, y las l&#xED;neas cl&#xE1;sicas donde se almacena el resultado de esta medida.
+La siguiente figura muestra un ejemplo de un diagrama de bloques de un circuito cu&#xE1;ntico:</p>
+<p><img src="figs/qc-circuit-entanglement.svg" alt="Circuito cu&#xE1;ntico que genera entrelazamiento entre dos c&#xFA;bits." width="50%" style="display: block; margin: auto;"></p>
+<p>Se puede ver que este circuito presenta dos l&#xED;neas de c&#xFA;bits, la <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo stretchy="false">[</mo><mn>0</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">q[0]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mopen">[</span><span class="mord">0</span><span class="mclose">]</span></span></span></span> y la <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo stretchy="false">[</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">q[1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mopen">[</span><span class="mord">1</span><span class="mclose">]</span></span></span></span>, a las que se les aplican las puertas cu&#xE1;nticas <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi></mrow><annotation encoding="application/x-tex">H</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span></span></span></span> y CNOT (que veremos en detalle en la siguiente secci&#xF3;n). Finalmente, en cada una de las l&#xED;neas se aplica una operaci&#xF3;n de medida que pasa el resultado a las l&#xED;neas cl&#xE1;sicas etiquetadas como <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">c2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord mathnormal">c</span><span class="mord">2</span></span></span></span>.</p>
+<p>Aunque la representaci&#xF3;n de un circuito cu&#xE1;ntico es muy similar a la de un circuito digital cl&#xE1;sico, que tambi&#xE9;n est&#xE1; formado por una serie de l&#xED;neas que conectan puertas l&#xF3;gicas, tanto su implementaci&#xF3;n f&#xED;sica como su interpretaci&#xF3;n conceptual son muy diferentes:</p>
+<ul>
+<li><p><em>Circuito digital cl&#xE1;sico:</em> Un circuito digital cl&#xE1;sico es una representaci&#xF3;n de su implementaci&#xF3;n f&#xED;sica. Las l&#xED;neas de este circuito realmente son pistas conductoras que transportan se&#xF1;ales el&#xE9;ctricas que se corresponden con los bits &#x2018;0&#x2019; y &#x2018;1&#x2019;.
+Estas pistas conductoras conectan una serie de puertas l&#xF3;gicas implementadas f&#xED;sicamente con transistores, que transforman las se&#xF1;ales el&#xE9;ctricas a su salida.</p></li>
+<li><p><em>Circuito cu&#xE1;ntico:</em> Un procesador cu&#xE1;ntico solamente &#x201C;almacena&#x201D; el estado cu&#xE1;ntico del sistema.
+Por su parte, las puertas cu&#xE1;nticas son operaciones que se realizan sobre ese estado. As&#xED;, los c&#xFA;bits del sistema no viajan por las l&#xED;neas del circuito a trav&#xE9;s de las puertas cu&#xE1;nticas, sino que son las puertas las que se &#x201C;lanzan&#x201D; al estado, modific&#xE1;ndolo en el proceso. Un ejemplo ser&#xED;a la tecnolog&#xED;a de iones atrapados, donde el procesador cu&#xE1;ntico es una c&#xE1;mara de vac&#xED;o donde se encuentran varios iones en suspensi&#xF3;n (los c&#xFA;bits) a los que se les aplican pulsos l&#xE1;ser para controlarlos (las puertas cu&#xE1;nticas).
+De esta forma, en la figura anterior debemos pensar en las l&#xED;neas de c&#xFA;bits de un circuito cu&#xE1;ntico como un eje temporal que muestra las operaciones que se aplican sobre los estados iniciales.</p></li>
+</ul>
+<p>Por otra parte, el resultado de la ejecuci&#xF3;n de un programa en un ordenador cl&#xE1;sico, para unas ciertas condiciones iniciales, est&#xE1; perfectamente definido. Sin embargo, como se ha visto en la secci&#xF3;n anterior, la salida de un circuito cu&#xE1;ntico es aleatoria por naturaleza, ya que es el resultado de un proceso de medida de un estado cu&#xE1;ntico. La siguiente figura muestra el resultado de ejecutar el circuito anterior en un ordenador cu&#xE1;ntico 1024 veces:</p>
+<p><img src="figs/qc-results-entanglement.svg" alt="Histograma resultante de la ejecuci&#xF3;n de un circuito cu&#xE1;ntico que genera entrelazamiento." width="65%" style="display: block; margin: auto;"></p>
+<p>Este gr&#xE1;fico muestra que el <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>47</mn><mo separator="true">,</mo><mn>2</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">47,2\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9444em;vertical-align:-0.1944em;"></span><span class="mord">47</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">2%</span></span></span></span> de las ejecuciones del circuito el estado medido fue &#x2018;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>00</mn></mrow><annotation encoding="application/x-tex">00</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">00</span></span></span></span>&#x2019;, el <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6</mn><mo separator="true">,</mo><mn>4</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">6,4\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9444em;vertical-align:-0.1944em;"></span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">4%</span></span></span></span> la salida fue &#x2018;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>01</mn></mrow><annotation encoding="application/x-tex">01</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">01</span></span></span></span>&#x2019;, el <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo separator="true">,</mo><mn>8</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">2,8\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9444em;vertical-align:-0.1944em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">8%</span></span></span></span> fue &#x2018;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">10</span></span></span></span>&#x2019;, y el <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>43</mn><mo separator="true">,</mo><mn>5</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">43,5\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9444em;vertical-align:-0.1944em;"></span><span class="mord">43</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">5%</span></span></span></span> fue &#x2018;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>11</mn></mrow><annotation encoding="application/x-tex">11</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">11</span></span></span></span>&#x2019;. Por tanto, un circuito o un algoritmo cu&#xE1;ntico para resolver un problema no tiene por qu&#xE9; ofrecer una soluci&#xF3;n determinista, sino que &#xE9;ste en general resultar&#xE1; en un resultado aleatorio.</p>
+</div>
+<div id="decoherencia-y-m&#xE9;tricas-de-prestaciones" class="section level2 hasAnchor" number="11.3">
+<h2><span class="header-section-number">11.3</span> Decoherencia y m&#xE9;tricas de prestaciones<a href="11-ordenadores.html#decoherencia-y-m&#xE9;tricas-de-prestaciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Otra diferencia fundamental entre los sistemas de computaci&#xF3;n cl&#xE1;sicos y los cu&#xE1;nticos es el efecto del ruido.
+Los ordenadores actuales, al ser digitales, son capaces de corregir peque&#xF1;as perturbaciones el&#xE9;ctricas en los circuitos.
+Por ejemplo, si los bits &#x2018;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>&#x2019; y &#x2018;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>&#x2019; se codifican con un voltaje de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&#x2212;</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">-5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">&#x2212;</span><span class="mord">5</span></span></span></span> y <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">+5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">+</span><span class="mord">5</span></span></span></span> voltios, respectivamente, y en una l&#xED;nea del circuito se observa un voltaje de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">+3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">+</span><span class="mord">3</span></span></span></span> voltios, se asume que el bit correspondiente en esa l&#xED;nea es el &#x2018;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>&#x2019; y se corrige el voltaje en las operaciones siguientes.</p>
+<p>Los procesadores cu&#xE1;nticos, en cambio, son &#x201C;anal&#xF3;gicos&#x201D; por naturaleza, ya que los estados cu&#xE1;nticos cubren un rango continuo de valores. Por tanto, en estos sistemas los errores se acumulan a lo largo de la computaci&#xF3;n si no se corrigen de alguna forma.
+Los ordenadores cu&#xE1;nticos necesitan por tanto un asilamiento perfecto, ya que cualquier iteracci&#xF3;n entre los estados cu&#xE1;nticos almacenados y el entorno conducir&#xED;a a errores en los c&#xFA;bits y a la p&#xE9;rdida del entrelazamiento, la superposici&#xF3;n y de otras propiedades cu&#xE1;nticas.
+A este efecto se le denomina <em>decoherencia</em> y limita en gran medida las capacidades de un ordenador cu&#xE1;ntico.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-1" class="definition"><strong>Definición 11.1  </strong></span>Denominamos <em>tiempo de coherencia</em> de un ordenar cu&#xE1;ntico al tiempo medio que transcurre antes de que se produzca un proceso de decoherencia en su estado interno.</p>
+</div>
+<p>Para obtener un resultado v&#xE1;lido, la ejecuci&#xF3;n de una computaci&#xF3;n cu&#xE1;ntica se debe terminar y medir dentro del tiempo de coherencia del sistema. En otro caso el resultado pasa a ser simplemente un ruido aleatorio.
+As&#xED;, las prestaciones de un ordenador cu&#xE1;ntico no se pueden medir &#xFA;nicamente con el n&#xFA;mero de c&#xFA;bits que es capaz de manejar, sino que tambi&#xE9;n es fundamental su tiempo de coherencia y los tipos de puertas cu&#xE1;nticas que es capaz de aplicar.
+Por todo ello es realmente dif&#xED;cil comparar tecnolog&#xED;as o incluso ordenadores cu&#xE1;nticos de distintos fabricantes que usan la misma tecnolog&#xED;a.</p>
+<p>En la actualidad, existen dos estrategias para abordar este problema:</p>
+<ul>
+<li><p><em>Definir una m&#xE9;trica unificada:</em> Se pueden cuantificar las distintas propiedades que afectan las prestaciones de un ordenador cu&#xE1;ntico y combinarlas en una &#xFA;nica m&#xE9;trica. Un ejemplo es el <em>volumen cu&#xE1;ntico</em>, propuesto por IBM en 2016. Esta m&#xE9;trica de prestaciones tiene en cuenta el n&#xFA;mero de c&#xFA;bits, el tiempo de coherencia y las puertas cu&#xE1;nticas que permite aplicar el procesador de forma directa. El resultado es un n&#xFA;mero que, en principio, permitir&#xED;a comparar los sistemas de diferentes fabricantes. Hoy en d&#xED;a &#xFA;nicamente IBM y Honeywell utilizan esta m&#xE9;trica.</p></li>
+<li><p><em>Benchmarks:</em> Se pueden comparar las prestaciones de dos sistemas diferentes ejecutando un mismo algoritmo.
+Un ejemplo en computaci&#xF3;n cl&#xE1;sica ser&#xED;a ejecutar un juego y comparar los fps (<em>frames per second</em>) que ofrecen dos ordenadores o plataformas diferentes. En el &#xE1;mbito de la computaci&#xF3;n cu&#xE1;ntica, esta estrategia fue empleada por Google en 2019 para establecer el hito de la <em>supremac&#xED;a cu&#xE1;ntica</em>. En este caso, se defini&#xF3; un algoritmo concreto que deb&#xED;an ejecutar tanto un ordenador cu&#xE1;ntico como un ordenador cl&#xE1;sico. El equipo de investigadores demostr&#xF3; entonces que el procesador cu&#xE1;ntico pod&#xED;a realizar esta tarea de una forma mucho m&#xE1;s r&#xE1;pida que el mejor cluster de computaci&#xF3;n cl&#xE1;sica existente en ese momento.</p></li>
+</ul>
+<p>Dada la diversidad de arquitecturas y los m&#xFA;ltiples par&#xE1;metros que afectan a las prestaciones de un ordenador cu&#xE1;ntico, la tendencia actual es utilizar algoritmos o <em>benchmarks</em> para comparar sistemas.
+Los algoritmos que se utilizan no est&#xE1;n todav&#xED;a establecidos, y en general no realizan tareas de utilidad pr&#xE1;ctica, sino que estan dise&#xF1;ados para mostrar las fortalezas del sistema. Por ejemplo, la tarea considerada en el hito de la supremac&#xED;a cu&#xE1;ntica de Google fue la ejecuci&#xF3;n de un circuito cu&#xE1;ntico aleatorio. As&#xED;, <em>a grosso modo</em>, este hito simplemente demostr&#xF3; que un ordenador cu&#xE1;ntico es m&#xE1;s eficiente que un ordenador cl&#xE1;sico simulando un cierto circuito cu&#xE1;ntico, pero sin ninguna utilidad real.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="10-criptografia.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="12-paralelismo.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

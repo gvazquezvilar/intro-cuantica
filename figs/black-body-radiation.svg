@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="124.18376mm"
+   height="93.830925mm"
+   viewBox="0 0 124.18376 93.830925"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="black-body-radiation.svg">
+  <defs
+     id="defs2">
+    <marker
+       inkscape:stockid="Arrow1Mstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path887"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(0.4,0,0,0.4,4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mend"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path890"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path884"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.3460736"
+     inkscape:cx="281.84455"
+     inkscape:cy="224.02073"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="1911"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid837"
+       originx="-37.497348"
+       originy="-135.65649" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-37.497349,-67.512587)">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 50.270833,85.333334 V 154.125 H 156.10416"
+       id="path839"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 48.947916,154.125 h 1.322917 v 1.32292"
+       id="path843"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 48.947916,140.89583 h 2.645833"
+       id="path845"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path847"
+       d="M 48.947917,101.20833 H 51.59375"
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path849"
+       d="M 48.947917,127.66667 H 51.59375"
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 48.947917,114.4375 H 51.59375"
+       id="path851"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 48.947917,87.979167 H 51.59375"
+       id="path853"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 76.729166,155.44792 v -2.64584"
+       id="path855"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path857"
+       d="m 103.1875,155.44792 v -2.64584"
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path859"
+       d="m 156.10417,155.44792 v -2.64584"
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 129.64583,155.44792 v -2.64584"
+       id="path861"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="90.817719"
+       y="161.26875"
+       id="text865"><tspan
+         sodipodi:role="line"
+         id="tspan863"
+         x="90.817719"
+         y="161.26875"
+         style="font-size:4.93888903px;stroke-width:0.26458332">Frecuencia</tspan></text>
+    <text
+       id="text869"
+       y="45.357803"
+       x="-142.5072"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"
+       transform="rotate(-90)"><tspan
+         style="font-size:4.93888903px;stroke-width:0.26458332"
+         y="45.357803"
+         x="-142.5072"
+         id="tspan867"
+         sodipodi:role="line">Intensidad Radiada</tspan></text>
+    <text
+       id="text873"
+       y="75.801208"
+       x="94.592651"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:0.5;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"><tspan
+         style="font-size:4.93888903px;line-height:0.5;text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         y="75.801208"
+         x="94.592651"
+         sodipodi:role="line"
+         id="tspan2195">Ley de</tspan><tspan
+         style="font-size:4.93888903px;line-height:0.5;text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         y="81.303581"
+         x="94.592651"
+         sodipodi:role="line"
+         id="tspan2209">Rayleigh-Jeans</tspan><tspan
+         style="font-size:4.93888903px;line-height:0.5;text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         y="86.805962"
+         x="94.592651"
+         sodipodi:role="line"
+         id="tspan2199">(clásica)</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.80000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Mstart)"
+       d="M 72.760417,70.78125 C 68.418696,118.4209 63.25404,148.10844 50.270833,154.125 64.822917,147.51042 74.083333,98.5625 94.668388,96.653574 113.70337,94.888392 124.35417,121.05208 154.78125,136.92708"
+       id="path879"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccsc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:0.5;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="51.168865"
+       y="70.976974"
+       id="text2139"><tspan
+         sodipodi:role="line"
+         x="51.913006"
+         y="70.976974"
+         style="font-size:4.23333311px;line-height:0.5;text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         id="tspan2145">Dirección </tspan><tspan
+         sodipodi:role="line"
+         x="51.913006"
+         y="76.505692"
+         style="font-size:4.23333311px;line-height:0.5;text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         id="tspan2213">&quot;catástrofe  </tspan><tspan
+         sodipodi:role="line"
+         x="51.168865"
+         y="82.034401"
+         style="font-size:4.23333311px;line-height:0.5;text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         id="tspan2149"> ultravioleta&quot;</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:0.5;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="144.69162"
+       y="110.50267"
+       id="text2207"><tspan
+         id="tspan2203"
+         sodipodi:role="line"
+         x="144.69162"
+         y="110.50267"
+         style="font-size:4.93888903px;line-height:0.5;text-align:center;text-anchor:middle;stroke-width:0.26458332">Ley de Planck</tspan><tspan
+         id="tspan2205"
+         sodipodi:role="line"
+         x="144.69162"
+         y="116.00504"
+         style="font-size:4.93888903px;line-height:0.5;text-align:center;text-anchor:middle;stroke-width:0.26458332">(cuántica)</tspan></text>
+  </g>
+</svg>

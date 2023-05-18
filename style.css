@@ -1,0 +1,39 @@
+p.caption {
+  color: #777;
+  margin-top: 10px;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+iframe {
+  padding:0px;
+  margin:0px;
+  border:0px;
+}
+.rounded_box {
+  padding: 1em;
+  background: #EEEEEE;
+  color: black;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.anim_box {
+  padding: 1em;
+  text-align: center;
+  background: #FFFFFF;
+  color: black;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.center {
+  text-align: center;
+}
